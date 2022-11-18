@@ -1,5 +1,6 @@
 plugins {
     id 'scala'
+    id 'maven-publish'
 }
 
 group 'committee.nova'
@@ -18,4 +19,45 @@ dependencies {
     implementation 'org.apache.commons:commons-lang3:3.3.2'
     implementation 'com.google.code.gson:gson:2.2.4'
     implementation 'com.google.guava:guava:17.0'
+}
+
+
+publishing {
+    publications {
+        mavenJava(MavenPublication) {
+            from components.java
+            version = "${project.version}"
+            artifactId = "${project.archives_base_name}"
+            groupId = "${project.maven_group}"
+            pom {
+                name = "ServersideJsonLocalization"
+                description = ''
+                url = 'https://wiki.nova-committee.cn'
+                licenses {
+                    license {
+                        name = 'GNU AGPL v3'
+                    }
+                }
+                developers {
+                    developer {
+                        id = 'tapio'
+                        name = 'Tapio'
+                        email = 'mikhailtapio13468@163.com'
+                    }
+                }
+            }
+        }
+    }
+
+    // See https://docs.gradle.org/current/userguide/publishing_maven.html for information on how to set up publishing.
+    repositories {
+        maven {
+            name = "release"
+            url = 'https://maven.nova-committee.cn/releases'
+            credentials {
+                username = System.getenv('MAVEN_USERNAME')
+                password = System.getenv('MAVEN_PASSWORD')
+            }
+        }
+    }
 }
