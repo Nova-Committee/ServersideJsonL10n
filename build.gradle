@@ -1,0 +1,21 @@
+plugins {
+    id 'scala'
+}
+
+group 'committee.nova'
+version '1.0.0'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.scala-lang:scala-library:2.11.1'
+    implementation 'org.scala-lang:scala-reflect:2.11.1'
+    implementation 'org.apache.logging.log4j:log4j-api:2.0-beta9'
+    implementation 'org.apache.logging.log4j:log4j-core:2.0-beta9'
+    implementation 'commons-io:commons-io:2.4'
+    implementation 'org.apache.commons:commons-lang3:3.3.2'
+    implementation 'com.google.code.gson:gson:2.2.4'
+    implementation 'com.google.guava:guava:17.0'
+}
