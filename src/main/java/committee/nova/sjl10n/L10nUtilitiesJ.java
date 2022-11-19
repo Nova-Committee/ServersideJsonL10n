@@ -2,7 +2,6 @@ package committee.nova.sjl10n;
 
 import com.google.common.collect.ImmutableMap;
 import com.google.gson.*;
-import com.sun.istack.internal.Nullable;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -91,7 +90,7 @@ public class L10nUtilitiesJ {
         }
     }
 
-    private static String getType(@Nullable JsonElement json) {
+    private static String getType(JsonElement json) {
         String s = StringUtils.abbreviateMiddle(String.valueOf(json), "...", 10);
         if (json == null) {
             return "null (missing)";
