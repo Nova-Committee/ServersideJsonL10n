@@ -29,12 +29,11 @@ publishing {
         mavenJava(MavenPublication) {
             from components.java
             version = "${project.version}"
-            artifactId = "${project.archives_base_name}"
+            artifactId = "sjl10n-scala"
             groupId = "${project.maven_group}"
             pom {
-                name = "ServersideJsonLocalization"
+                name = "ServersideJsonLocalization-Scala"
                 description = ''
-                url = 'https://wiki.nova-committee.cn'
                 licenses {
                     license {
                         name = 'GNU AGPL v3'
@@ -42,9 +41,8 @@ publishing {
                 }
                 developers {
                     developer {
-                        id = 'tapio'
-                        name = 'Tapio'
-                        email = 'mikhailtapio13468@163.com'
+                        id = 'mikhailtapio'
+                        name = 'MikhailTapio'
                     }
                 }
             }
