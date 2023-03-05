@@ -23,7 +23,7 @@ public class L10nUtilitiesJ {
     public static final String DEFAULT_LANGUAGE = "en_us";
     private static final Logger LOGGER = LogManager.getLogger();
 
-    private static JsonText create(String modId, String langId) {
+    public static JsonText create(String modId, String langId) {
         final ImmutableMap.Builder<String, String> builderDefault = ImmutableMap.builder();
         final ImmutableMap.Builder<String, String> builder = ImmutableMap.builder();
         final BiConsumer<String, String> consumerDefault = builderDefault::put;
